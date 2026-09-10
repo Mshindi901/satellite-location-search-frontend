@@ -1,7 +1,7 @@
 import axios from 'axios';
 export default async function Search(location) {
     try {
-        const res = await axios.post('http://localhost:4000/api/satellite/search', {
+        const res = await axios.post('https://satellite-location-search-backend.onrender.com/api/satellite/search', {
             location: location
         });
         if(res.data.success === false){
@@ -12,4 +12,4 @@ export default async function Search(location) {
         console.error(`Error with client fetching results ${error}`);
         return null;
     }
-}
+};
