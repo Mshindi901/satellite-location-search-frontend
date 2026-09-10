@@ -27,7 +27,7 @@ function App() {
 
   return (
     <>
-      <section className="w-full min-h-screen bg-linear-to-b from-blue-500 from-slate-800 flex justify-center items-start p-4 md:p-8">
+      <section className="w-full min-h-screen bg-linear-to-b from-blue-500 from-slate-800 flex flex-col gap-2 justify-center items-start p-4 md:p-8">
         <form
           action=""
           method="post"
