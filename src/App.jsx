@@ -20,6 +20,8 @@ function App() {
     } catch (error) {
       console.error(`Error with handlesearch function in the form ${error}`);
       return;
+    } finally {
+      setLoading(false);
     }
   };
 
