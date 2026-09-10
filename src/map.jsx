@@ -22,7 +22,7 @@ export default function SatelliteMap({ satelliteData }) {
   const position = [location.latitude, location.longitude];
 
   return (
-    <div style={{ height: '600px', width: '100%', borderRadius: '12px', overflow: 'hidden' }}>
+    <div style={{ height: '600px', width: '100%', overflow: 'hidden', background: '#0f172a' }}>
       <MapContainer 
         center={position} 
         zoom={12} 

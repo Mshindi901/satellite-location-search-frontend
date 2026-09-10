@@ -27,11 +27,11 @@ function App() {
 
   return (
     <>
-      <section className="w-full min-h-screen bg-linear-to-b from-blue-500 from-slate-800 flex flex-col gap-2 justify-center items-start p-4 md:p-8">
+      <section className="w-full min-h-screen bg-linear-to-b from-blue-500 from-slate-800 flex flex-col items-center gap-4 p-4 md:p-8">
         <form
           action=""
           method="post"
-          className="md:w-1/3 w-full h-fit md:m-0 m-3 p-4 flex flex-col gap-3 rounded-2xl bg-slate-900/40 shadow-xl border border-white/10 backdrop-blur-sm"
+          className="w-full max-w-md h-fit p-4 flex flex-col gap-3 rounded-2xl bg-slate-900/40 shadow-xl border border-white/10 backdrop-blur-sm"
           onSubmit={handleSearch}
         >
           <input
@@ -62,9 +62,13 @@ function App() {
             {loading ? 'Searching...' : 'Search Satellite'}
           </button>
         </form>
+
         {
-          result &&
-          <SatelliteMap satelliteData={mapData}/> 
+          result && (
+            <div className="w-full max-w-5xl overflow-hidden rounded-2xl border border-white/10 bg-slate-900/20 shadow-xl">
+              <SatelliteMap satelliteData={mapData}/> 
+            </div>
+          )
         }
       </section>  
     </>
