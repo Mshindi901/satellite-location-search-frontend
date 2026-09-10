@@ -6,11 +6,13 @@ function App() {
   const [location, setLocation] = useState('');
   const [county, setCounty] = useState('');
   const [result, setResult] = useState(false);
+  const [loading, setLoading] = useState(false)
   const [mapData, setMapData] = useState([]);
 
   const handleSearch = async(e) => {
     try {
       e.preventDefault();
+      setLoading(true)
       const searchLocation = `${location}, ${county}, Kenya`;
       const response = await Search(searchLocation);
       setMapData(response); 
@@ -34,7 +36,7 @@ function App() {
               ))
             }
           </select>
-          <button type="submit" className="px-2 py-3 rounded-xl bg-blue-800 text-white">Search</button>
+          <button type="submit" className="px-2 py-3 rounded-xl bg-blue-800 text-white">{loading ? 'Searching...' : 'Search Satellite'}</button>
         </form>
         {
           result &&
